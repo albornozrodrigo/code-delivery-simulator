@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 golang:latest
+FROM --platform=linux/arm64 golang:1.16
 
 WORKDIR /go/src
 

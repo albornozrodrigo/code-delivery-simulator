@@ -19,6 +19,7 @@ func init() {
 func main() {
 	producer := kafka.NewKafkaProducer()
 	kafka.Publish("test", "read_test", producer)
+	
 	for {
 		_ = 1
 	}

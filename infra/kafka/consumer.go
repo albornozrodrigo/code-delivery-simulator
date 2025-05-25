@@ -2,6 +2,7 @@ package kafka
 
 import (
 	ckafka "github.com/confluentinc/confluent-kafka-go/v2/kafka"
+	// ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 	"fmt"
 	"log"
 	"os"
