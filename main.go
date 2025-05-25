@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
-	route "github.com/albornozrodrigo/code-delivery-simulator/app/route"
-	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
+	// "fmt"
+	// route "github.com/albornozrodrigo/code-delivery-simulator/app/route"
+	// ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/albornozrodrigo/code-delivery-simulator/infra/kafka"
 	"github.com/joho/godotenv"
 	"log"
