@@ -20,8 +20,8 @@ func NewKafkaConsumer(msgChan chan *ckafka.Message) *KafkaConsumer {
 
 func (k *KafkaConsumer) Consume() {
 	configMap := &ckafka.ConfigMap{
-		"bootstrap.servers": os.Getenv("KAFKA_BOOTSTRAP_SERVERS"),
-		"group.id":          os.Getenv("KAFKA_CONSUMER_GROUP_ID"),
+		"bootstrap.servers": os.Getenv("KafkaBootstrapServers"),
+		"group.id":          os.Getenv("KafkaConsumerGroupId"),
 	}
 
 	c, err := ckafka.NewConsumer(configMap)
@@ -29,7 +29,7 @@ func (k *KafkaConsumer) Consume() {
 		log.Fatalf("Error creating consumer: %v", err.Error())
 	}
 
-	topics := []string{os.Getenv("KAFKA_READ_TOPIC")}
+	topics := []string{os.Getenv("KafkaReadTopic")}
 	c.SubscribeTopics(topics, nil)
 	fmt.Println("Consumer started, waiting for messages...")
 	for {

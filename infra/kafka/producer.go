@@ -9,7 +9,7 @@ import (
 
 func NewKafkaProducer() *ckafka.Producer {
 	configMap := &ckafka.ConfigMap{
-		"bootstrap.servers": os.Getenv("KAFKA_BOOTSTRAP_SERVERS"),
+		"bootstrap.servers": os.Getenv("KafkaBootstrapServers"),
 	}
 
 	p, err := ckafka.NewProducer(configMap)
