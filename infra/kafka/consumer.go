@@ -2,6 +2,7 @@ package kafka
 
 import (
 	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
+	"fmt"
 	"log"
 	"os"
 )
@@ -10,7 +11,7 @@ type KafkaConsumer struct {
 	MsgChan chan *ckafka.Message
 }
 
-func NewKafkaConsumer (msgChan *ckafka.Message) *KafkaConsumer {
+func NewKafkaConsumer(msgChan chan *ckafka.Message) *KafkaConsumer {
 	return &KafkaConsumer{
 		MsgChan: msgChan,
 	}
