@@ -37,7 +37,7 @@ func(r *Route) LoadPositions() error {
 		return err
 	}
 
-	defer.Close()
+	defer f.Close()
 
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
