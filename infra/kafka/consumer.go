@@ -28,7 +28,7 @@ func (k *KafkaConsumer) Consume() {
 		log.Fatalf("Error creating consumer: %v", err.Error())
 	}
 
-	topics := []string{os.Getenv("KAFKA_TOPIC")}
+	topics := []string{os.Getenv("KAFKA_READ_TOPIC")}
 	c.SubscribeTopics(topics, nil)
 	fmt.Println("Consumer started, waiting for messages...")
 	for {

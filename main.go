@@ -3,7 +3,7 @@ package main
 import (
 	// "fmt"
 	// route "github.com/albornozrodrigo/code-delivery-simulator/app/route"
-	// ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
+	// ckafka "github.com/confluentinc/confluent-kafka-go/v2/kafka"
 	"github.com/albornozrodrigo/code-delivery-simulator/infra/kafka"
 	"github.com/joho/godotenv"
 	"log"
