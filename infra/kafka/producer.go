@@ -7,7 +7,7 @@ import (
 )
 
 func NewKafkaProducer() *ckafka.Producer {
-	return &*ckafka.configMap{
+	configMap := &ckafka.ConfigMap{
 		"bootstrap.servers": os.Getenv("KAFKA_BOOTSTRAP_SERVERS"),
 	}
 
@@ -26,7 +26,7 @@ func Publish(msg string, topic string, producer *ckafka.Producer) error {
 		Value:          []byte(msg),
 	}
 
-	err := producer.Produce(message, deliveryChan)
+	err := producer.Produce(message, nil)
 	if err != nil {
 		return err
 	}
