@@ -1,10 +1,8 @@
 package main
 
-import route "github.com/albornozrodrigo/code-delivery-simulator"
-
 import (
 	"fmt"
-	route "github.com/albornozrodrigo/code-delivery-simulator"
+	route "./app/route"
 )
 
 func main() {
