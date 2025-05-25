@@ -1,6 +1,10 @@
 package kafka
 
-import ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
+import (
+	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
+	"log"
+	"os"
+)
 
 func NewKafkaProducer() *ckafka.Producer {
 	return &*ckafka.configMap{

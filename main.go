@@ -5,6 +5,7 @@ import (
 	route "github.com/albornozrodrigo/code-delivery-simulator/app/route"
 	"github.com/albornozrodrigo/code-delivery-simulator/infra/kafka"
 	"github.com/joho/godotenv"
+	"log"
 )
 
 func init() {
