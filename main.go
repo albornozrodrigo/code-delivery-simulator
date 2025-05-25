@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	route "./app/route"
+	route "github.com/albornozrodrigo/code-delivery-simulator/app/route"
 )
 
 func main() {
