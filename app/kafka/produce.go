@@ -6,13 +6,17 @@ import (
 	"time"
 	"encoding/json"
 	ckafka "github.com/confluentinc/confluent-kafka-go/v2/kafka"
-	"github.com/albornozrodrigo/code-delivery-simulator/app/route"
+	router "github.com/albornozrodrigo/code-delivery-simulator/app/route"
 	"github.com/albornozrodrigo/code-delivery-simulator/infra/kafka"
 )
 
+//{"clientId":"1","routeId":"1"}
+//{"clientId":"2","routeId":"2"}
+//{"clientId":"3","routeId":"3"}
+
 func Produce(msg *ckafka.Message) {
 	producer := kafka.NewKafkaProducer()
-	route := NewRoute()
+	route := router.NewRoute()
 	json.Unmarshal(msg.Value, &route)
 	route.LoadPositions()
 	positions, err := route.ExportJsonPositions()
