@@ -1,16 +1,29 @@
-FROM --platform=linux/arm64 golang:1.16
+FROM node:20-alpine
 
-WORKDIR /go/src
+RUN apk add --no-cache bash
 
-ENV PATH="/go/bin:${PATH}"
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+RUN corepack prepare pnpm@latest --activate
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    librdkafka-dev \
-    pkg-config \
-    gcc \
-    libc6-dev -y
+# Define diretório de trabalho
+WORKDIR /app
 
-ENV CGO_ENABLED=1
+# Copia package.json e package-lock.json
+COPY package*.json ./
 
+# Instala dependências
+RUN pnpm install
+
+# Copia o restante dos arquivos
+COPY . .
+
+# Compila TypeScript
+RUN pnpm build
+
+# Define a porta padrão (se for usar)
+EXPOSE 3001
+
+# Comando padrão
 CMD ["tail", "-f", "/dev/null"]

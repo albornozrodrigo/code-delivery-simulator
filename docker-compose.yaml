@@ -1,9 +1,9 @@
 services:
   app:
     build: .
-    container_name: simulator
+    container_name: simulator_ts
     volumes:
-      - .:/go/src/
+      - .:/app/
     networks:
       - kafka-net
 
