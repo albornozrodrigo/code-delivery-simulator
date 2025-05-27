@@ -4,8 +4,8 @@
 		"dev": "ts-node src/index.ts",
 		"build": "tsc && cp .env.example dist/.env",
 		"start": "node dist/index.js",
-		"compose-app": "docker-compose up -f ././docker/app/docker-compose.yaml -d --build",
-		"compose-kafka": "docker-compose up -f ././docker/kafka/docker-compose.yaml -d --build"
+		"compose-app": "docker-compose -f ./.docker/app/docker-compose.yaml up -d --build",
+		"compose-kafka": "docker-compose -f ./.docker/kafka/docker-compose.yaml up -d --build"
 	},
 	"dependencies": {
 		"dotenv": "^16.5.0",

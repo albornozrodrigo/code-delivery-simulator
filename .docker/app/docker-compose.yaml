@@ -1,7 +1,9 @@
 services:
   app:
-    build: .
-    container_name: simulator_ts
+    build: 
+      context: ../../
+      dockerfile: Dockerfile
+    container_name: simulator
     volumes:
       - .:/app/
     networks:
